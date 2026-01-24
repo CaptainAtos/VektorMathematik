@@ -1,4 +1,6 @@
-﻿namespace VektorMathematik
+﻿using System.Runtime.Intrinsics;
+
+namespace VektorMathematik
 {
     partial class Program
     {
@@ -35,6 +37,14 @@
             //{
             //    return new Vector(X / oV.X, Y / oV.Y, Z / oV.Z);
             //}
+
+            public Vector Distance(Vector oV) 
+            {
+                float v = 
+            
+            }
+
+
         }
     }
 }
