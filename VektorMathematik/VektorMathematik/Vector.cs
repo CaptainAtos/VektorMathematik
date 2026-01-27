@@ -37,7 +37,7 @@ namespace VektorMathematik
             return new Vector(a.X - b.X, a.Y - b.Y, a.Z - b.Z);
         }
 
-        // Operator * (Skalar)
+        // Operator * Skalar
         public static Vector operator *(Vector v, float s)
         {
             return new Vector(v.X * s, v.Y * s, v.Z * s);
