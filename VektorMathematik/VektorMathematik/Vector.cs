@@ -1,50 +1,82 @@
-﻿using System.Runtime.Intrinsics;
+﻿using System;
 
 namespace VektorMathematik
 {
-    partial class Program
+    struct Vector
     {
-        class Vector
+        // Attribute
+        public float X;
+        public float Y;
+        public float Z;
+
+        // Standardkonstruktor (0,0,0)
+        public Vector()
         {
-            public float X = 0;
-            public float Y = 0;
-            public float Z = 0;
+            X = 0;
+            Y = 0;
+            Z = 0;
+        }
 
-            public Vector(float x, float y, float z)
-            {
-                X = x;
-                Y = y;
-                Z = z;
-            }
-            public Vector Addition(Vector oV)
-            {
-                return new Vector(X + oV.X, Y + oV.Y, Z + oV.Z);
+        // Konstruktor mit Parametern
+        public Vector(float x, float y, float z)
+        {
+            X = x;
+            Y = y;
+            Z = z;
+        }
 
-            }
+        // Operator +
+        public static Vector operator +(Vector a, Vector b)
+        {
+            return new Vector(a.X + b.X, a.Y + b.Y, a.Z + b.Z);
+        }
 
-            public Vector Subtract(Vector oV) 
-            {
-                return new Vector(X - oV.X, Y - oV.Y, Z - oV.Z);
-            }
+        // Operator -
+        public static Vector operator -(Vector a, Vector b)
+        {
+            return new Vector(a.X - b.X, a.Y - b.Y, a.Z - b.Z);
+        }
 
-            public Vector Multiply(Vector oV) 
-            {
-                return new Vector(X * 2, Y * 2, Z * 2);
-            
-            }
+        // Operator * (Skalar)
+        public static Vector operator *(Vector v, float s)
+        {
+            return new Vector(v.X * s, v.Y * s, v.Z * s);
+        }
 
-            //public Vector Divide(Vector oV) 
-            //{
-            //    return new Vector(X / oV.X, Y / oV.Y, Z / oV.Z);
-            //}
+        // Länge des Vektors
+        public float Length()
+        {
+            return MathF.Sqrt(LengthSquared());
+        }
 
-            public Vector Distance(Vector oV) 
-            {
-                float v = 
-            
-            }
+        // Quadratlänge
+        public float LengthSquared()
+        {
+            return X * X + Y * Y + Z * Z;
+        }
 
+        // Punktprodukt (nicht-statisch)
+        public float Dot(Vector other)
+        {
+            return X * other.X + Y * other.Y + Z * other.Z;
+        }
 
+        // Punktprodukt (statisch)
+        public static float Dot(Vector a, Vector b)
+        {
+            return a.X * b.X + a.Y * b.Y + a.Z * b.Z;
+        }
+
+        // Distanz (statisch)
+        public static float Distance(Vector a, Vector b)
+        {
+            return (a - b).Length();
+        }
+
+        // Distanz (nicht-statisch)
+        public float Distance(Vector other)
+        {
+            return Distance(this, other);
         }
     }
 }
