@@ -55,28 +55,16 @@ namespace VektorMathematik
             return X * X + Y * Y + Z * Z;
         }
 
-        // Punktprodukt (nicht-statisch)
-        public float Dot(Vector other)
-        {
-            return X * other.X + Y * other.Y + Z * other.Z;
-        }
-
-        // Punktprodukt (statisch)
+        // Punktprodukt
         public static float Dot(Vector a, Vector b)
         {
             return a.X * b.X + a.Y * b.Y + a.Z * b.Z;
         }
 
-        // Distanz (statisch)
+        // Distanz
         public static float Distance(Vector a, Vector b)
         {
             return (a - b).Length();
-        }
-
-        // Distanz (nicht-statisch)
-        public float Distance(Vector other)
-        {
-            return Distance(this, other);
         }
     }
 }

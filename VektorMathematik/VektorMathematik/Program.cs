@@ -2,7 +2,7 @@
 
 namespace VektorMathematik
 {
-    partial class Program
+    internal class Program
     {
         static void Main(string[] args)
         {
@@ -70,7 +70,7 @@ namespace VektorMathematik
                         break;
                 }
 
-                Console.WriteLine("\nEnter drücken um fortzufahren...");
+                Console.WriteLine("Enter drücken um fortzufahren");
                 Console.ReadLine();
             }
         }
