@@ -17,7 +17,7 @@ namespace VektorMathematik
             Z = 0;
         }
 
-        // Konstruktor mit Parametern
+        // Konstruktor mit Parameterübergabe
         public Vector(float x, float y, float z)
         {
             X = x;

@@ -4,7 +4,7 @@ namespace VektorMathematik
 {
     internal class Program
     {
-        static void Main(string[] args)
+        static void Main()  
         {
             bool running = true;
 
@@ -14,7 +14,7 @@ namespace VektorMathematik
                 ShowMenu();
 
                 Console.Write("Auswahl: ");
-                string input = Console.ReadLine();
+                string input = Console.ReadLine()!;
 
                 switch (input)
                 {
@@ -44,7 +44,7 @@ namespace VektorMathematik
                         Console.WriteLine($"Länge: {vLen.Length()}");
                         break;
 
-                    case "5": // Distanz zwischen zwei Vektoren
+                    case "5": //  Distanz zwischen zwei Vektoren
                         Vector d1 = ReadVector("Vektor A");
                         Vector d2 = ReadVector("Vektor B");
                         Console.WriteLine($"Distanz: {Vector.Distance(d1, d2)}");
@@ -75,7 +75,7 @@ namespace VektorMathematik
             }
         }
 
-        static void ShowMenu()
+        static void ShowMenu() // Schreibt lediglich das Menü nach dem Starten der Anwendung
         {
             Console.WriteLine(" Vektor Mathematik ");
             Console.WriteLine("1 - Addition");
@@ -88,7 +88,7 @@ namespace VektorMathematik
             Console.WriteLine("0 - Beenden");
         }
 
-        static Vector ReadVector(string name)
+        static Vector ReadVector(string name)  // Liest die Userangaben aus und übergibt diese dann dem Konstruktor um eine Vektorklasse zu deklarieren
         {
             Console.WriteLine($"\n{name}:");
             float x = ReadFloat("X");
@@ -97,7 +97,7 @@ namespace VektorMathematik
             return new Vector(x, y, z);
         }
 
-        static float ReadFloat(string name)
+        static float ReadFloat(string name)  // Überprüft ob der Input einem float entspricht und gib diesen dann wieder
         {
             float value;
             bool isValid;
@@ -105,7 +105,7 @@ namespace VektorMathematik
             do
             {
                 Console.Write($"{name}: ");
-                string input = Console.ReadLine();
+                string input = Console.ReadLine()!;
 
                 isValid = float.TryParse(input, out value);
 
@@ -119,7 +119,7 @@ namespace VektorMathematik
             return value;
         }
 
-        static void PrintVector(string name, Vector v)
+        static void PrintVector(string name, Vector v)  // Schreibt die Lösung der Vektorrechnungen auf
         {
             Console.WriteLine($"{name}: ({v.X}, {v.Y}, {v.Z})");
         }
