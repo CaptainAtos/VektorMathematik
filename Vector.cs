@@ -2,9 +2,11 @@
 
 namespace VektorMathematik
 {
-    struct Vector
+    struct Vector // In diesem Fall wurde ein Struct gewählt da ein Vektor ein kleiner Werttyp mit nur 3 Attributen ist.
+                  // Bei besonders vielen Berechnungen kann so die Performance verbessert werden da bei jeder neuen Berechnung
+                  // kein neuer Vector im Heap gespeichert werden muss.
     {
-        // Attribute
+        
         public float X;
         public float Y;
         public float Z;

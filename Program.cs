@@ -88,7 +88,7 @@ namespace VektorMathematik
             Console.WriteLine("0 - Beenden");
         }
 
-        static Vector ReadVector(string name)  // Liest die Userangaben aus und übergibt diese dann dem Konstruktor um eine Vektorklasse zu deklarieren
+        static Vector ReadVector(string name)  // Liest die User Eingaben für X, Y, Z ein, erstellt daraus einen Neuen Vector und gibt in zurück 
         {
             Console.WriteLine($"\n{name}:");
             float x = ReadFloat("X");
